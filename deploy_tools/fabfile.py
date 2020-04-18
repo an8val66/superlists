@@ -41,13 +41,13 @@ def _update_setting(source_folder, site_name):
         chars = 'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)'
         key = ''.join(random.SystemRandom().choice(chars) for _ in range(50))
         append(secret_key_file, f'SECRET_KEY = "{key}"')
-    append(settings_path + '\nfrom .secret_key import SECRET_KEY')
+    append(settings_path, '\nfrom .secret_key import SECRET_KEY')
 
 
 def _update_virtualenv(source_folder):
     virtualenv_folder = source_folder + '/../venv'
     if not exists(virtualenv_folder + '/bin/pip'):
-        run(f'python -m venv {virtualenv_folder}')
+        run(f'python3 -m venv {virtualenv_folder}')
     run(f'{virtualenv_folder}/bin/pip install -r {source_folder}/requirements.txt')
 
 
