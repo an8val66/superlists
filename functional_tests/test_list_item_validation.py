@@ -29,7 +29,7 @@ class ItemValidationTest(FunctionalTest):
         # Ela recebe um aviso semelhante na página da lista
         self.wait_for(lambda: self.assertEqual(
             self.browser.find_element_by_css_selector('.has-error').text,
-            "you can't have an empty list item"
+            "You can't have an empty list item"
         ))
 
         # E ela pode corrigir isso preenchendo o item com um texto
