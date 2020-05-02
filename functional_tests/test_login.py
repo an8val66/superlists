@@ -5,7 +5,7 @@ from selenium.webdriver.common.keys import Keys
 from .base import FunctionalTest
 
 TEST_EMAIL = 'edith@example.com'
-SUBJECT = 'You login link for SuperLists'
+SUBJECT = 'Your login link for Superlists'
 
 
 class LoginTest(FunctionalTest):
